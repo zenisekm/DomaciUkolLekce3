@@ -5,14 +5,18 @@ import java.time.LocalDate;
 public class Booking {
 
     private int guestsNumber;
-    private LocalDate reservedTime;
+    private LocalDate reservedTimeFrom;
+    private LocalDate reservedTimeTo;
     private String typeOfVacation;
 
-    public Booking(int guestsNumber, LocalDate reservedTime, String typeOfVacation) {
+
+    public Booking(int guestsNumber, LocalDate reservedTimeFrom, LocalDate reservedTimeTo, String typeOfVacation) {
         this.guestsNumber = guestsNumber;
-        this.reservedTime = reservedTime;
+        this.reservedTimeFrom = reservedTimeFrom;
+        this.reservedTimeTo = reservedTimeTo;
         this.typeOfVacation = typeOfVacation;
     }
+
 
     public int getGuestsNumber() {
         return guestsNumber;
@@ -22,12 +26,20 @@ public class Booking {
         this.guestsNumber = guestsNumber;
     }
 
-    public LocalDate getReservedTime() {
-        return reservedTime;
+    public LocalDate getReservedTimeFrom() {
+        return reservedTimeFrom;
     }
 
-    public void setReservedTime(LocalDate reservedTime) {
-        this.reservedTime = reservedTime;
+    public void setReservedTimeFrom(LocalDate reservedTimeFrom) {
+        this.reservedTimeFrom = reservedTimeFrom;
+    }
+
+    public LocalDate getReservedTimeTo() {
+        return reservedTimeTo;
+    }
+
+    public void setReservedTimeTo(LocalDate reservedTimeTo) {
+        this.reservedTimeTo = reservedTimeTo;
     }
 
     public String getTypeOfVacation() {
@@ -38,3 +50,6 @@ public class Booking {
         this.typeOfVacation = typeOfVacation;
     }
 }
+
+
+

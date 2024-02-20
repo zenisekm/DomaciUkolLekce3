@@ -1,3 +1,4 @@
+import com.engeto.ja.Booking;
 import com.engeto.ja.Guest;
 import com.engeto.ja.Room;
 
@@ -18,7 +19,10 @@ public class Main {
         Room room2 = new Room(2, 1,true, true, 1000);
         Room room3 = new Room(3, 3,false, true, 2400);
 
-        System.out.println(room1.getRoomNumber() + room1.getBeds() + room1.isBalcony() + room1.isSeaView() + room1.getPricePerNight());
+        // ZDE VYPSAT POKOJE NA OBRAZOVKU
+
+
+
 
 
 
