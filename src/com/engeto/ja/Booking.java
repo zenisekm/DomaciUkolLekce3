@@ -7,14 +7,14 @@ public class Booking {
     private int guestsNumber;
     private LocalDate reservedTimeFrom;
     private LocalDate reservedTimeTo;
-    private String typeOfVacation;
+    private boolean isVacation;
 
 
-    public Booking(int guestsNumber, LocalDate reservedTimeFrom, LocalDate reservedTimeTo, String typeOfVacation) {
+    public Booking(int guestsNumber, LocalDate reservedTimeFrom, LocalDate reservedTimeTo, boolean isVacation) {
         this.guestsNumber = guestsNumber;
         this.reservedTimeFrom = reservedTimeFrom;
         this.reservedTimeTo = reservedTimeTo;
-        this.typeOfVacation = typeOfVacation;
+        this.isVacation = isVacation;
     }
 
 
@@ -42,12 +42,12 @@ public class Booking {
         this.reservedTimeTo = reservedTimeTo;
     }
 
-    public String getTypeOfVacation() {
-        return typeOfVacation;
+    public boolean isVacation() {
+        return isVacation;
     }
 
-    public void setTypeOfVacation(String typeOfVacation) {
-        this.typeOfVacation = typeOfVacation;
+    public void setIsVacation(boolean isVacationVacation) {
+        this.isVacation = isVacation;
     }
 }
 

@@ -23,8 +23,9 @@ public class Main {
 
         // ZDE VYPSAT POKOJE NA OBRAZOVKU
 
-        Booking booking1 = new Booking(1, LocalDate.of(2021,7,19),LocalDate.of(2021,7,26),"Work");
-        Booking booking2 = new Booking(2,LocalDate.of(2021,9,1), LocalDate.of(2021,9,14),"Holiday");
+        Booking booking1 = new Booking(1, LocalDate.of(2021,7,19),LocalDate.of(2021,7,26),false);
+        Booking booking2 = new Booking(2,LocalDate.of(2021,9,1), LocalDate.of(2021,9,14),true);
+
 
         // SEZNAM
 
@@ -33,15 +34,16 @@ public class Main {
         bookingList.add(booking2);
         System.out.println(bookingList.size());
         System.out.println(bookingList.get(0).getGuestsNumber());
+        System.out.println(bookingList.get(0).isVacation());
 
         for (Booking booking : bookingList) {
-            System.out.println("Guest number: " + booking.getGuestsNumber()
-                    + " From Date: " + booking.getReservedTimeFrom()
-                 //   + " To Date: " + booking.setReservedTimeTo());
-                    + " Type of vacation: " + booking.getTypeOfVacation());
+          System.out.println("Guest number: " + booking.getGuestsNumber()
+                  + " From Date: " + booking.getReservedTimeFrom()
+                  + " To Date: " + booking.getReservedTimeTo()
+                  + " Type of vacation: " + booking.isVacation());
 
+      }
 
-        }
 
 
 
