@@ -29,16 +29,15 @@ public class BookingManager {
 
         // ZDE NETUŠÍM JAK NASTAVIT ABY MĚ TO VRÁTILO POUZE PRACOVNÍ POBYTY
 
-        public List<Booking> getNumberOfWorkingBookings() {
-            return
-        }
+     // public List<Booking> getNumberOfWorkingBookings() {
+     //  return;
+     // }
 
-        // ZDE NETUŠÍM JAK NASTAVIT ABY MĚ TO VRÁTILO PRŮMĚR
+     // ZDE NETUŠÍM JAK NASTAVIT ABY MĚ TO VRÁTILO PRŮMĚR
 
-        public List<Booking> getAverageGuests() {
-            return
-        }
-
+     // public List<Booking> getAverageGuests() {
+     //  return;
+     //
 
 
 }
