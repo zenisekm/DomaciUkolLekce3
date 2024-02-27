@@ -9,14 +9,16 @@ public class Booking {
     private LocalDate reservedTimeTo;
     private boolean isVacation;
     private int indexNumber;
+    private int numberOfGuests;
 
 
-    public Booking(int guestsNumber, LocalDate reservedTimeFrom, LocalDate reservedTimeTo, boolean isVacation, int indexNumber) {
+    public Booking(int guestsNumber, LocalDate reservedTimeFrom, LocalDate reservedTimeTo, boolean isVacation, int indexNumber, int numberOfGuests) {
         this.guestsNumber = guestsNumber;
         this.reservedTimeFrom = reservedTimeFrom;
         this.reservedTimeTo = reservedTimeTo;
         this.isVacation = isVacation;
         this.indexNumber = indexNumber;
+        this.numberOfGuests = numberOfGuests;
     }
 
 
@@ -61,7 +63,13 @@ public class Booking {
         this.indexNumber = indexNumber;
     }
 
+    public int getNumberOfGuests() {
+        return numberOfGuests;
+    }
 
+    public void setNumberOfGuests(int numberOfGuests) {
+        this.numberOfGuests = numberOfGuests;
+    }
 
 }
 
