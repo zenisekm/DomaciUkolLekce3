@@ -22,6 +22,10 @@ public class BookingManager {
                 return new ArrayList<>(booking);
         }
 
+        public List<Booking> getBookingByIndex() {
+            return new ArrayList<>(booking);
+        }
+
         // NETUŠÍM CO JAK VYTVOŘIT getBooking(index)
 
 

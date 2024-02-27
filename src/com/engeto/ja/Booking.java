@@ -8,14 +8,17 @@ public class Booking {
     private LocalDate reservedTimeFrom;
     private LocalDate reservedTimeTo;
     private boolean isVacation;
+    private int indexNumber;
 
 
-    public Booking(int guestsNumber, LocalDate reservedTimeFrom, LocalDate reservedTimeTo, boolean isVacation) {
+    public Booking(int guestsNumber, LocalDate reservedTimeFrom, LocalDate reservedTimeTo, boolean isVacation, int indexNumber) {
         this.guestsNumber = guestsNumber;
         this.reservedTimeFrom = reservedTimeFrom;
         this.reservedTimeTo = reservedTimeTo;
         this.isVacation = isVacation;
+        this.indexNumber = indexNumber;
     }
+
 
 
     public int getGuestsNumber() {
@@ -49,6 +52,17 @@ public class Booking {
     public void setIsVacation(boolean isVacationVacation) {
         this.isVacation = isVacation;
     }
+
+    public int getIndexNumber() {
+        return indexNumber;
+    }
+
+    public void setIndexNumber(int indexNumber) {
+        this.indexNumber = indexNumber;
+    }
+
+
+
 }
 
 
