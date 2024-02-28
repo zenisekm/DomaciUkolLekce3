@@ -14,6 +14,10 @@ public class BookingManager {
             booking.add(newBooking);
         }
 
+        public List<Booking> getBooking(int index) {
+            return (List<Booking>) booking.get(index);
+        }
+
         public void clearBookings() {
             booking.clear();
         }
@@ -22,9 +26,14 @@ public class BookingManager {
             return new ArrayList<>(booking);
         }
 
-        public List<Booking> getBookingByIndex() {
-            return new ArrayList<>(booking);
-        }
+
+
+
+
+
+
+
+
 
 
         // ZDE NETUŠÍM JAK NASTAVIT ABY MĚ TO VRÁTILO POUZE PRACOVNÍ POBYTY
