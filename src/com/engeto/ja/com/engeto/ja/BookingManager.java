@@ -27,6 +27,23 @@ public class BookingManager {
         }
 
 
+        public int getNumberOfWorkingBookings() {
+            for (Booking booking : booking) {
+                if (!booking.isVacation()) {
+                    getNumberOfWorkingBookings();
+                }
+            }
+                return getNumberOfWorkingBookings();
+        }
+
+
+        public double getAverageGuests() {
+            int totalGuests = 0;
+            for (Booking booking : booking) {
+                totalGuests += booking.getNumberOfGuests();
+            }
+            return (double) totalGuests / getBookings();
+        }
 
 
 

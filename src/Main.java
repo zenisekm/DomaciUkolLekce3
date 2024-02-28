@@ -26,8 +26,8 @@ public class Main {
 
         // ZDE VYPSAT POKOJE NA OBRAZOVKU
 
-        Booking booking1 = new Booking(1, LocalDate.of(2021,7,19),LocalDate.of(2021,7,26),false,1,1,1);
-        Booking booking2 = new Booking(2,LocalDate.of(2021,9,1), LocalDate.of(2021,9,14),true,2,1,1);
+        Booking booking1 = new Booking(1, LocalDate.of(2021,7,19),LocalDate.of(2021,7,26),false,1,1);
+        Booking booking2 = new Booking(2,LocalDate.of(2021,9,1), LocalDate.of(2021,9,14),true,2,1);
   //    Booking booking3 = new Booking(3, LocalDate.of(2023,6,1), LocalDate.of(2023,6,7),false,5,3,1);
   //    Booking booking4 = new Booking(4, LocalDate.of(2023,7,18), LocalDate.of(2023,7,21), true, 6, 2,1);
   //    Booking booking5 = new Booking(5, LocalDate.of(2023,8,1), LocalDate.of(2023,8,2), true,7,2,1);
@@ -72,6 +72,9 @@ public class Main {
                   + " To Date: " + booking.getReservedTimeTo()
                   + " Type of vacation: " + booking.isVacation());
         }
+
+
+
 
 
 
