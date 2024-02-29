@@ -1,6 +1,7 @@
 import com.engeto.ja.Booking;
 import com.engeto.ja.Guest;
 import com.engeto.ja.Room;
+import com.engeto.ja.com.engeto.ja.BookingManager;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
@@ -19,17 +20,20 @@ public class Main {
         System.out.println(guest1.getName() + guest1.getBirthdate());
         System.out.println(guest2.getName() + guest2.getBirthdate());
 
+
+
         Room room1 = new Room(1, 1,true, true, 1000);
         Room room2 = new Room(2, 1,true, true, 1000);
         Room room3 = new Room(3, 3,false, true, 2400);
 
 
-        // ZDE VYPSAT POKOJE NA OBRAZOVKU
 
         Booking booking1 = new Booking(1, LocalDate.of(2021,7,19),LocalDate.of(2021,7,26),false,1,1);
         Booking booking2 = new Booking(2,LocalDate.of(2021,9,1), LocalDate.of(2021,9,14),true,2,1);
-  //    Booking booking3 = new Booking(3, LocalDate.of(2023,6,1), LocalDate.of(2023,6,7),false,5,3,1);
-  //    Booking booking4 = new Booking(4, LocalDate.of(2023,7,18), LocalDate.of(2023,7,21), true, 6, 2,1);
+        Booking booking3 = new Booking(3, LocalDate.of(2023,6,1), LocalDate.of(2023,6,7),false,5,3);
+        Booking booking4 = new Booking(4, LocalDate.of(2023,7,18), LocalDate.of(2023,7,21), true, 6, 2);
+
+
   //    Booking booking5 = new Booking(5, LocalDate.of(2023,8,1), LocalDate.of(2023,8,2), true,7,2,1);
   //    Booking booking6 = new Booking(5, LocalDate.of(2023,8,3), LocalDate.of(2023,8,4), true,8,2,1);
   //    Booking booking7 = new Booking(5, LocalDate.of(2023,8,5), LocalDate.of(2023,8,6), true,9,2,1);
@@ -44,23 +48,13 @@ public class Main {
         // VYTVOŘENO, NEŽ SEM SI PŘEČETL ŽE TO MÁ BÝT PŘES CYKLUS.
 
 
+
        // SEZNAM
 
         List<Booking> bookingList = new ArrayList<>();
         bookingList.add(booking1);
         bookingList.add(booking2);
-    // bookingList.add(booking3);
-    // bookingList.add(booking4);
-    // bookingList.add(booking5);
-    // bookingList.add(booking6);
-    // bookingList.add(booking7);
-    // bookingList.add(booking8);
-    // bookingList.add(booking9);
-    // bookingList.add(booking10);
-    // bookingList.add(booking11);
-    // bookingList.add(booking12);
-    // bookingList.add(booking13);
-    // bookingList.add(booking14);
+
 
         System.out.println(bookingList.size());
         System.out.println(bookingList.get(0).getGuestsNumber());
@@ -72,6 +66,15 @@ public class Main {
                   + " To Date: " + booking.getReservedTimeTo()
                   + " Type of vacation: " + booking.isVacation());
         }
+
+
+        int bookings = 10;
+        for (int i = 0; i < bookings; i++) {
+            bookingList.add(new Booking(4,LocalDate.of(2024,8,1),
+                    LocalDate.of(2024,8,2), false,2,1));
+        }
+
+        System.out.println("All bookings " + bookingList.size());
 
 
 

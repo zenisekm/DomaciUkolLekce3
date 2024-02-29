@@ -37,13 +37,13 @@ public class BookingManager {
         }
 
 
-        public double getAverageGuests() {
-            int totalGuests = 0;
-            for (Booking booking : booking) {
-                totalGuests += booking.getNumberOfGuests();
-            }
-            return (double) totalGuests / getBookings();
-        }
+   //    public double getAverageGuests() {
+   //      int totalGuests = 0;
+   //      for (Booking booking : booking) {
+   //          totalGuests += booking.getNumberOfGuests();
+   //      }
+   //      return (double) totalGuests / getBookings();
+      //  }
 
 
 
