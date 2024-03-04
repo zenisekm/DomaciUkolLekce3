@@ -16,6 +16,14 @@ public class Main {
         Guest guest4 = new Guest("Karel Dvořák", LocalDate.of(1979, 1,3));
         Guest guest5 = new Guest("Karolína Tmavá", LocalDate.of(1988, 8,18));
 
+        List<Guest> guestList = new ArrayList<>();
+        guestList.add(guest1);
+        guestList.add(guest2);
+        guestList.add(guest3);
+        guestList.add(guest4);
+        guestList.add(guest5);
+
+
 
         System.out.println(guest1.getName() + guest1.getBirthdate());
         System.out.println(guest2.getName() + guest2.getBirthdate());
@@ -32,6 +40,7 @@ public class Main {
         Booking booking2 = new Booking(2,LocalDate.of(2021,9,1), LocalDate.of(2021,9,14),true,2,1);
         Booking booking3 = new Booking(3, LocalDate.of(2023,6,1), LocalDate.of(2023,6,7),false,5,3);
         Booking booking4 = new Booking(4, LocalDate.of(2023,7,18), LocalDate.of(2023,7,21), true, 6, 2);
+        Booking booking5 = new Booking(5,LocalDate.of(2024,8,1), LocalDate.of(2023,8,31), true,3,1);
 
 
   //    Booking booking5 = new Booking(5, LocalDate.of(2023,8,1), LocalDate.of(2023,8,2), true,7,2,1);
@@ -54,6 +63,9 @@ public class Main {
         List<Booking> bookingList = new ArrayList<>();
         bookingList.add(booking1);
         bookingList.add(booking2);
+        bookingList.add(booking3);
+        bookingList.add(booking4);
+        bookingList.add(booking5);
 
 
         System.out.println(bookingList.size());
@@ -74,7 +86,33 @@ public class Main {
                     LocalDate.of(2024,8,2), false,2,1));
         }
 
+
+        // PŘIDÁNO 10 REZERVACÍ, NETUŠÍM JAK ZADAT DATA KDYŽ SE VYTVÁŘÍ PŘES CYKLUS.
+
         System.out.println("All bookings " + bookingList.size());
+
+
+        room3.addNewHost(guest3);
+        room2.addNewHost(guest4);
+        room2.addNewHost(guest5);
+        room3.addNewHost(guest5);
+
+        for (Booking booking : bookingList) {
+            System.out.println(
+                    booking.getReservedTimeFrom() + " až " + booking.getReservedTimeTo() +
+                            ": " + booking.getRoomNumber() // ZDE NETUŠÍM JAK ZADAT ABY TO VYPSALO HOSTA
+                    + " [" + booking.getNumberOfGuests() + ", "
+                            + room1.isSeaView() // ZDE JAK VŠECHNY POKOJE
+                            + "] " +
+                            " za "  // ZDE JAK TAM DOSTAT CENU ZE TŘÍDY ROOM
+            );
+
+
+
+
+        }
+
+
 
 
 

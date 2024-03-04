@@ -2,12 +2,15 @@ package com.engeto.ja;
 
 import java.time.LocalDate;
 
+
 public class Booking {
 
     private int guestsNumber;
     private LocalDate reservedTimeFrom;
     private LocalDate reservedTimeTo;
     private boolean isVacation;
+
+
 
 
     private int roomNumber;

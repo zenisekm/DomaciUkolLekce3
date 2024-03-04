@@ -1,5 +1,8 @@
 package com.engeto.ja;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Room  {
 
     private int roomNumber;
@@ -7,6 +10,12 @@ public class Room  {
     private  boolean balcony;
     private boolean seaView;
     private int pricePerNight;
+
+
+    private List<Guest> guestList = new ArrayList<>();
+
+
+
 
     public Room(int roomNumber, int beds, boolean balcony, boolean seaView, int pricePerNight) {
         this.roomNumber = roomNumber;
@@ -54,6 +63,14 @@ public class Room  {
 
     public void setPricePerNight(int pricePerNight) {
         this.pricePerNight = pricePerNight;
+    }
+
+    public List<Guest> getGuestList() {
+        return guestList;
+    }
+
+    public void addNewHost(Guest newGuest) {
+        this.guestList.add(newGuest);
     }
 }
 

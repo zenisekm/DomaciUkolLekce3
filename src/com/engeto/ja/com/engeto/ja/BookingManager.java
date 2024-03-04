@@ -27,43 +27,30 @@ public class BookingManager {
         }
 
 
-        public int getNumberOfWorkingBookings() {
+        // ZDE ZKOUŠKA NASTAVENÍ PRACOVNÍCH POBYTŮ
+
+         public int getNumberOfWorkingBookings() {
+            int numberOfWorkingBookings = 0;
             for (Booking booking : booking) {
                 if (!booking.isVacation()) {
-                    getNumberOfWorkingBookings();
+                    numberOfWorkingBookings++;
                 }
+
             }
-                return getNumberOfWorkingBookings();
-        }
+            return numberOfWorkingBookings;
+         }
 
 
-   //    public double getAverageGuests() {
-   //      int totalGuests = 0;
-   //      for (Booking booking : booking) {
-   //          totalGuests += booking.getNumberOfGuests();
-   //      }
-   //      return (double) totalGuests / getBookings();
-      //  }
-
-
-
-
-
-
-
-
-
-        // ZDE NETUŠÍM JAK NASTAVIT ABY MĚ TO VRÁTILO POUZE PRACOVNÍ POBYTY
-
-     // public List<Booking> getNumberOfWorkingBookings() {
-     //  return;
-     // }
 
      // ZDE NETUŠÍM JAK NASTAVIT ABY MĚ TO VRÁTILO PRŮMĚR
 
-     // public List<Booking> getAverageGuests() {
-     //  return;
-     //
+        public double getAvergeGuests(){
+            int totalGuests = 0;
+            for (Booking booking : booking) {
+            totalGuests += booking.getNumberOfGuests();
+            }
 
+            return (double) totalGuests/booking.getFirst().getNumberOfGuests();
+             }
 
 }
