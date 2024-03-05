@@ -36,11 +36,12 @@ public class Main {
 
 
 
-        Booking booking1 = new Booking(1, LocalDate.of(2021,7,19),LocalDate.of(2021,7,26),false,1,1);
-        Booking booking2 = new Booking(2,LocalDate.of(2021,9,1), LocalDate.of(2021,9,14),true,2,1);
-        Booking booking3 = new Booking(3, LocalDate.of(2023,6,1), LocalDate.of(2023,6,7),false,5,3);
-        Booking booking4 = new Booking(4, LocalDate.of(2023,7,18), LocalDate.of(2023,7,21), true, 6, 2);
-        Booking booking5 = new Booking(5,LocalDate.of(2024,8,1), LocalDate.of(2023,8,31), true,3,1);
+        Booking booking1 = new Booking(1, LocalDate.of(2021,7,19),LocalDate.of(2021,7,26),false,room1,guest1,1,1000);
+        Booking booking2 = new Booking(2,LocalDate.of(2021,9,1), LocalDate.of(2021,9,14),true,room2,guest1, 1,1000);
+        Booking booking3 = new Booking(3, LocalDate.of(2023,6,1), LocalDate.of(2023,6,7),false,room3,guest3, 1,2400);
+        Booking booking4 = new Booking(4, LocalDate.of(2023,7,18), LocalDate.of(2023,7,21), true, room1, guest2, 1, 1000);
+        Booking booking5 = new Booking(5,LocalDate.of(2023,8,1), LocalDate.of(2023,8,31), true,room3,guest1, 1,2400);
+
 
 
   //    Booking booking5 = new Booking(5, LocalDate.of(2023,8,1), LocalDate.of(2023,8,2), true,7,2,1);
@@ -80,11 +81,18 @@ public class Main {
         }
 
 
-        int bookings = 10;
-        for (int i = 0; i < bookings; i++) {
-            bookingList.add(new Booking(4,LocalDate.of(2024,8,1),
-                    LocalDate.of(2024,8,2), false,2,1));
+
+
+
+
+
+
+        for (int fromDate = 1; fromDate <= 20; fromDate += 2) {
+            bookingList.add(new Booking(4, LocalDate.of(2024, 8, 1),
+                    LocalDate.of(2024, 8, 2), true, room2, guest5,
+                    1, 1000));
         }
+
 
 
         // PŘIDÁNO 10 REZERVACÍ, NETUŠÍM JAK ZADAT DATA KDYŽ SE VYTVÁŘÍ PŘES CYKLUS.
@@ -97,18 +105,42 @@ public class Main {
         room2.addNewHost(guest5);
         room3.addNewHost(guest5);
 
+
+
+        System.out.println(" ");
+        System.out.println(" ");
+        System.out.println(" ");
+        System.out.println(" ");
+
+        System.out.println("==== VYPSANI VSECH REZERVACI ====");
+
         for (Booking booking : bookingList) {
             System.out.println(
                     booking.getReservedTimeFrom() + " až " + booking.getReservedTimeTo() +
-                            ": " + booking.getRoomNumber() // ZDE NETUŠÍM JAK ZADAT ABY TO VYPSALO HOSTA
-                    + " [" + booking.getNumberOfGuests() + ", "
-                            + room1.isSeaView() // ZDE JAK VŠECHNY POKOJE
-                            + "] " +
-                            " za "  // ZDE JAK TAM DOSTAT CENU ZE TŘÍDY ROOM
-            );
+                            ": " + booking.getGuest().getName() + " " + "(" + booking.getGuest().getBirthdate() + ") " +
+                            "[" + booking.getNumberOfGuests() + ", " + booking.getRoom().isSeaView() + "] " +
+                            "za cenu " + booking.getRoomPrice() + "kč");
+                    }
 
 
 
+ //          for (Booking booking : bookingList) {
+ //              if (booking.isVacation()) {
+ //                  System.out.println(booking.getGuest().getName());
+ //          }
+ //      }
+
+
+
+
+
+                for (Booking booking : bookingList) {
+                    if (booking.isVacation()) {
+                        System.out.println(booking.getGuest().getName());
+                        if ()
+
+                    }
+                }
 
         }
 
@@ -116,37 +148,5 @@ public class Main {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    }
+        }
 }
