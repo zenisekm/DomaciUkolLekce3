@@ -84,7 +84,7 @@ public class Main {
 
 
 
-
+        // TADY JSEM ZKOUŠEL VYTVOŘIT TY REZERVACE S CYKLEM ALE NEVÍM JAK TO TAM ZADAT ABY SE MĚNILO DATUM
 
 
         for (int fromDate = 1; fromDate <= 20; fromDate += 2) {
@@ -95,7 +95,7 @@ public class Main {
 
 
 
-        // PŘIDÁNO 10 REZERVACÍ, NETUŠÍM JAK ZADAT DATA KDYŽ SE VYTVÁŘÍ PŘES CYKLUS.
+
 
         System.out.println("All bookings " + bookingList.size());
 
@@ -124,6 +124,9 @@ public class Main {
 
 
 
+
+        // ZDE VYPSÁNY REZERVACE POUZE KTERÉ JSOU JAKO DOVOLENÁ, NETUŠÍM JAK ZADAT CYKLUS PRO PRVNÍCH 8.
+
  //          for (Booking booking : bookingList) {
  //              if (booking.isVacation()) {
  //                  System.out.println(booking.getGuest().getName());
@@ -131,22 +134,33 @@ public class Main {
  //      }
 
 
+                // 13. 1. V VYPSÁNÍ POČTU REZERVACÍ S JEDNÍM HOSTEM
 
-
-
-                for (Booking booking : bookingList) {
-                    if (booking.isVacation()) {
-                        System.out.println(booking.getGuest().getName());
-                        if ()
-
-                    }
-                }
-
-        }
+                 for (Booking booking : bookingList) {
+                     if (booking.getNumberOfGuests() == 1);
+                     System.out.println(bookingList.size());
+                 }
 
 
 
 
 
-        }
-}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    }
+
+
+

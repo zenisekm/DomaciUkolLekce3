@@ -17,6 +17,8 @@ public class Booking {
 
 
 
+
+
     private int numberOfGuests;
     private int roomPrice;
 
@@ -111,6 +113,13 @@ public class Booking {
     public void setRoomPrice(int roomPrice) {
         this.roomPrice = roomPrice;
     }
+
+
+
+
+
+
+
 }
 
 
