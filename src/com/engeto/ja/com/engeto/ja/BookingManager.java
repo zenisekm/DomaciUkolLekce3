@@ -44,13 +44,13 @@ public class BookingManager {
 
      // ZDE NETUŠÍM JAK NASTAVIT ABY MĚ TO VRÁTILO PRŮMĚR
 
-        public double getAvergeGuests(){
-            int totalGuests = 0;
-            for (Booking booking : booking) {
-            totalGuests += booking.getNumberOfGuests();
-            }
-
-            return (double) totalGuests/booking.getFirst().getNumberOfGuests();
-             }
+    //    public double getAvergeGuests(){
+    //        int totalGuests = 0;
+    //        for (Booking booking : booking) {
+    //        totalGuests += booking.getNumberOfGuests();
+    //        }
+    //        int i = totalGuests / getBookings();
+    //        return i;
+    //         }
 
 }
