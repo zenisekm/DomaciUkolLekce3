@@ -79,12 +79,15 @@ public class Main {
         // TADY JSEM ZKOUŠEL VYTVOŘIT TY REZERVACE S CYKLEM ALE NEVÍM JAK TO TAM ZADAT ABY SE MĚNILO DATUM
 
 
-        for (int fromDate = 1; fromDate <= 20; fromDate += 2) {
+        for (int fromDate = 1; fromDate <= 20; fromDate+= 2) {
+            LocalDate fromDateReservation = LocalDate.of(2024,8,fromDate);
+            LocalDate toDateReservation = fromDateReservation.plusDays(1);
 
-            bookingList.add(new Booking(4, LocalDate.of(2024, 8, fromDate),
-                    LocalDate.of(2024, 8, 2), true, room2, guest5, 1, 1000));
+            bookingList.add(new Booking(4,fromDateReservation,
+                    toDateReservation, true, room2, guest5, 1, 1000));
 
         }
+
 
 
 
