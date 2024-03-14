@@ -1,7 +1,6 @@
 import com.engeto.ja.Booking;
 import com.engeto.ja.Guest;
 import com.engeto.ja.Room;
-import com.engeto.ja.com.engeto.ja.BookingManager;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
@@ -62,6 +61,9 @@ public class Main {
         bookingList.add(booking3);
         bookingList.add(booking4);
         bookingList.add(booking5);
+
+
+
 
 
         System.out.println(bookingList.size());
@@ -193,6 +195,35 @@ public class Main {
 
 
         System.out.println("Počet rezervací s více hosty: " + moreGuestsReservation);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
