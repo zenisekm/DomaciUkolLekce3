@@ -77,10 +77,6 @@ public class Main {
                     + " Type of vacation: " + booking.isVacation());
         }
 
-
-        // TADY JSEM ZKOUŠEL VYTVOŘIT TY REZERVACE S CYKLEM ALE NEVÍM JAK TO TAM ZADAT ABY SE MĚNILO DATUM
-
-
         for (int fromDate = 1; fromDate <= 20; fromDate+= 2) {
             LocalDate fromDateReservation = LocalDate.of(2024,8,fromDate);
             LocalDate toDateReservation = fromDateReservation.plusDays(1);
@@ -89,12 +85,6 @@ public class Main {
                     toDateReservation, true, room2, guest5, 1, 1000));
 
         }
-
-
-
-
-
-
 
         System.out.println("All bookings " + bookingList.size());
 
@@ -107,10 +97,7 @@ public class Main {
 
         System.out.println(" ");
         System.out.println(" ");
-        System.out.println(" ");
-        System.out.println(" ");
-
-        System.out.println("==== VYPSANI VSECH REZERVACI ====");
+               System.out.println("==== VYPSANI VSECH REZERVACI ====");
 
         for (Booking booking : bookingList) {
             System.out.println(
@@ -120,22 +107,12 @@ public class Main {
                             "za cenu " + booking.getRoomPrice() + "kč");
         }
 
-
-
-
         System.out.println(" ");
         System.out.println(" ");
-        System.out.println(" ");
-        System.out.println(" ");
-
-
-
 
          // ZDE VYPSÁNY REZERVACE POUZE KTERÉ JSOU JAKO DOVOLENÁ
 
-
         System.out.println(" ******* PRVNÍCH 8 DOVOLENÝCH");
-
 
         int vacations = 0;
 
