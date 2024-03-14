@@ -27,7 +27,7 @@ public class BookingManager {
         }
 
 
-        // ZDE ZKOUŠKA NASTAVENÍ PRACOVNÍCH POBYTŮ
+        // ZDE VRÁCENÍ PRACOVNÍCH POBYTŮ
 
          public int getNumberOfWorkingBookings() {
             int numberOfWorkingBookings = 0;
@@ -42,15 +42,18 @@ public class BookingManager {
 
 
 
-     // ZDE NETUŠÍM JAK NASTAVIT ABY MĚ TO VRÁTILO PRŮMĚR
+      //  ZDE PRŮMĚR
 
-    //    public double getAvergeGuests(){
-    //        int totalGuests = 0;
-    //        for (Booking booking : booking) {
-    //        totalGuests += booking.getNumberOfGuests();
-    //        }
-    //        int i = totalGuests / getBookings();
-    //        return i;
-    //         }
+         public double getAvergeGuests(){
+             int totalGuests = 0;
+             int totalBookings = booking.size();
+
+             for (Booking booking : booking) {
+             totalGuests += booking.getNumberOfGuests();
+             }
+            return (double) totalBookings / totalBookings;
+
+
+              }
 
 }
