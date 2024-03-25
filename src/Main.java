@@ -1,4 +1,5 @@
 import com.engeto.ja.Booking;
+import com.engeto.ja.BookingManager;
 import com.engeto.ja.Guest;
 import com.engeto.ja.Room;
 
@@ -15,17 +16,6 @@ public class Main {
         Guest guest4 = new Guest("Karel Dvořák", LocalDate.of(1979, 1, 3));
         Guest guest5 = new Guest("Karolína Tmavá", LocalDate.of(1988, 8, 18));
 
-        List<Guest> guestList = new ArrayList<>();
-        guestList.add(guest1);
-        guestList.add(guest2);
-        guestList.add(guest3);
-        guestList.add(guest4);
-        guestList.add(guest5);
-
-
-        System.out.println(guest1.getName() + guest1.getBirthdate());
-        System.out.println(guest2.getName() + guest2.getBirthdate());
-
 
         Room room1 = new Room(1, 1, true, true, 1000);
         Room room2 = new Room(2, 1, true, true, 1000);
@@ -39,21 +29,12 @@ public class Main {
         Booking booking5 = new Booking(5, LocalDate.of(2023, 8, 1), LocalDate.of(2023, 8, 31), true, room3, guest1, 1, 2400);
 
 
-        //    Booking booking5 = new Booking(5, LocalDate.of(2023,8,1), LocalDate.of(2023,8,2), true,7,2,1);
-        //    Booking booking6 = new Booking(5, LocalDate.of(2023,8,3), LocalDate.of(2023,8,4), true,8,2,1);
-        //    Booking booking7 = new Booking(5, LocalDate.of(2023,8,5), LocalDate.of(2023,8,6), true,9,2,1);
-        //    Booking booking8 = new Booking(5, LocalDate.of(2023,8,7), LocalDate.of(2023,8,8), true,10,2,1);
-        //    Booking booking9 = new Booking(5, LocalDate.of(2023,8,9), LocalDate.of(2023,8,10), true,11,2,1);
-        //    Booking booking10 = new Booking(5, LocalDate.of(2023,8,11), LocalDate.of(2023,8,12), true,12,2,1);
-        //    Booking booking11 = new Booking(5, LocalDate.of(2023,8,13), LocalDate.of(2023,8,14), true,13,2,1);
-        //    Booking booking12 = new Booking(5, LocalDate.of(2023,8,15), LocalDate.of(2023,8,16), true,14,2,1);
-        //    Booking booking13 = new Booking(5, LocalDate.of(2023,8,17), LocalDate.of(2023,8,18), true,15,2,1);
-        //    Booking booking14 = new Booking(5, LocalDate.of(2023,8,19), LocalDate.of(2023,8,20), true,16,2,1);
-
-        // VYTVOŘENO, NEŽ SEM SI PŘEČETL ŽE TO MÁ BÝT PŘES CYKLUS.
 
 
         // SEZNAM
+
+
+
 
         List<Booking> bookingList = new ArrayList<>();
         bookingList.add(booking1);
@@ -62,13 +43,11 @@ public class Main {
         bookingList.add(booking4);
         bookingList.add(booking5);
 
+        BookingManager bookingManager = new BookingManager();
+        for (Booking booking : bookingList) {
+            bookingManager.addBooking(booking);
+        }
 
-
-
-
-        System.out.println(bookingList.size());
-        System.out.println(bookingList.get(0).getGuestsNumber());
-        System.out.println(bookingList.get(0).isVacation());
 
         for (Booking booking : bookingList) {
             System.out.println("Guest number: " + booking.getGuestsNumber()
@@ -86,7 +65,11 @@ public class Main {
 
         }
 
-        System.out.println("All bookings " + bookingList.size());
+
+
+        System.out.println("All bookings: " + bookingManager.getBookings().size());
+        System.out.println("Počet pracovních rezervací: " + bookingManager.getNumberOfWorkingBookings());
+        System.out.println("Průměrný počet hostů na rezervaci: " + bookingManager.getAverageGuests());
 
 
         room3.addNewHost(guest3);
@@ -173,6 +156,17 @@ public class Main {
 
         System.out.println("Počet rezervací s více hosty: " + moreGuestsReservation);
 
+        int bookingLength = booking1.getBookingLength();
+        System.out.println("Délka rezervace: " + bookingLength + " dnů");
+
+    }
+
+
+
+
+
+
+}
 
 
 
@@ -182,31 +176,6 @@ public class Main {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    }}
 
 
 

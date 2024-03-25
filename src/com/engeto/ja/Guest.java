@@ -1,8 +1,6 @@
 package com.engeto.ja;
 
 import java.time.LocalDate;
-import java.util.ArrayList;
-import java.util.List;
 
 public class Guest {
 
@@ -10,7 +8,7 @@ public class Guest {
     private String name;
     private LocalDate birthdate;
 
-    private List<Guest> guestList = new ArrayList<>();
+
 
 
     public Guest(String name, LocalDate birthdate) {
@@ -35,11 +33,4 @@ public class Guest {
     }
 
 
-    public List<Guest> getGuestList() {
-        return guestList;
-    }
-
-    public void setGuestList(List<Guest> guestList) {
-        this.guestList = guestList;
-    }
 }

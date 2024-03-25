@@ -2,7 +2,6 @@ package com.engeto.ja;
 
 import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;
-import java.util.List;
 
 
 public class Booking {
@@ -14,10 +13,6 @@ public class Booking {
 
     private Room room;
     private Guest guest;
-
-
-
-
 
 
     private int numberOfGuests;
@@ -116,11 +111,11 @@ public class Booking {
     }
 
 
-    public int getBookingLenght () {
+    public int getBookingLength () {
      LocalDate start = getReservedTimeFrom();
      LocalDate end = getReservedTimeTo();
      long daysBetween = ChronoUnit.DAYS.between(start, end);
-     return getBookingLenght();
+     return (int) daysBetween;
     }
 
 
@@ -128,7 +123,7 @@ public class Booking {
 
     public int getPrice () {
         int priceForNight = getRoomPrice();
-        int numberOfNights = getBookingLenght();
+        int numberOfNights = getBookingLength();
 
         int result = priceForNight * numberOfNights;
 
