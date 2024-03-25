@@ -49,27 +49,10 @@ public class Main {
         }
 
 
-        for (Booking booking : bookingList) {
-            System.out.println("Guest number: " + booking.getGuestsNumber()
-                    + " From Date: " + booking.getReservedTimeFrom()
-                    + " To Date: " + booking.getReservedTimeTo()
-                    + " Type of vacation: " + booking.isVacation());
-        }
+        shortBookingInfo(bookingList);
 
-        for (int fromDate = 1; fromDate <= 20; fromDate+= 2) {
-            LocalDate fromDateReservation = LocalDate.of(2024,8,fromDate);
-            LocalDate toDateReservation = fromDateReservation.plusDays(1);
-
-            bookingList.add(new Booking(4,fromDateReservation,
-                    toDateReservation, true, room2, guest5, 1, 1000));
-
-        }
-
-
-
-        System.out.println("All bookings: " + bookingManager.getBookings().size());
-        System.out.println("Počet pracovních rezervací: " + bookingManager.getNumberOfWorkingBookings());
-        System.out.println("Průměrný počet hostů na rezervaci: " + bookingManager.getAverageGuests());
+        makeBookings(bookingList, room2, guest5);
+        bookingsInfo(bookingManager);
 
 
         room3.addNewHost(guest3);
@@ -80,8 +63,49 @@ public class Main {
 
         System.out.println(" ");
         System.out.println(" ");
-               System.out.println("==== VYPSANI VSECH REZERVACI ====");
 
+
+        moreBookingInfo(bookingList);
+
+        System.out.println(" ");
+        System.out.println(" ");
+
+         // ZDE VYPSÁNY REZERVACE POUZE KTERÉ JSOU JAKO DOVOLENÁ
+
+        vacationBookings(bookingList);
+
+        System.out.println(" ");
+        System.out.println(" ");
+        System.out.println(" ");
+        System.out.println(" ");
+
+        // 13. METODY PRO VYPSÁNÍ
+
+        int oneGuestReservation = 0;
+        int twoGuestsReservation = 0;
+        int moreGuestsReservation = 0;
+
+        oneGuestBooking(bookingList, oneGuestReservation);
+
+        twoGuestsBooking(bookingList, twoGuestsReservation);
+
+        moreGuestsBooking(bookingList, moreGuestsReservation);
+
+        bookingLength(booking1);
+
+
+    }
+
+    private static void shortBookingInfo(List<Booking> bookingList) {
+        for (Booking booking : bookingList) {
+            System.out.println("Guest number: " + booking.getGuestsNumber()
+                    + " From Date: " + booking.getReservedTimeFrom()
+                    + " To Date: " + booking.getReservedTimeTo()
+                    + " Type of vacation: " + booking.isVacation());
+        }
+    }
+
+    private static void moreBookingInfo(List<Booking> bookingList) {
         for (Booking booking : bookingList) {
             System.out.println(
                     booking.getReservedTimeFrom() + " až " + booking.getReservedTimeTo() +
@@ -89,12 +113,48 @@ public class Main {
                             "[" + booking.getNumberOfGuests() + ", " + booking.getRoom().isSeaView() + "] " +
                             "za cenu " + booking.getRoomPrice() + "kč");
         }
+    }
 
-        System.out.println(" ");
-        System.out.println(" ");
+    private static void bookingLength(Booking booking1) {
+        int bookingLength = booking1.getBookingLength();
+        System.out.println("Délka rezervace: " + bookingLength + " dnů");
+    }
 
-         // ZDE VYPSÁNY REZERVACE POUZE KTERÉ JSOU JAKO DOVOLENÁ
+    private static void moreGuestsBooking(List<Booking> bookingList, int moreGuestsReservation) {
+        for (Booking booking : bookingList) {
+            int threeGuestReservation = booking.getGuestsNumber();
+            if (threeGuestReservation == 3) {
+                moreGuestsReservation++;
+            }
+        }
 
+
+        System.out.println("Počet rezervací s více hosty: " + moreGuestsReservation);
+    }
+
+    private static void twoGuestsBooking(List<Booking> bookingList, int twoGuestsReservation) {
+        for (Booking booking : bookingList) {
+            int numberOfGuests = booking.getNumberOfGuests();
+            if (numberOfGuests == 2) {
+                twoGuestsReservation++;
+            }
+        }
+
+        System.out.println("Počet rezervací s dvěma hosty: " + twoGuestsReservation);
+    }
+
+    private static void oneGuestBooking(List<Booking> bookingList, int oneGuestReservation) {
+        for (Booking booking : bookingList) {
+           int numberOfGuest = booking.getNumberOfGuests();
+            if (numberOfGuest == 1) {
+                oneGuestReservation++;
+            }
+        }
+
+        System.out.println("Počet rezervací s jedním hostem: " + oneGuestReservation);
+    }
+
+    private static void vacationBookings(List<Booking> bookingList) {
         System.out.println(" ******* PRVNÍCH 8 DOVOLENÝCH");
 
         int vacations = 0;
@@ -108,62 +168,25 @@ public class Main {
                 }
             }
         }
-
-
-        System.out.println(" ");
-        System.out.println(" ");
-        System.out.println(" ");
-        System.out.println(" ");
-
-
-        System.out.println("**** METODA PRO VYPSÁNÍ POČTU REZERVACÍ *****");
-
-
-        // 13. METODY PRO VYPSÁNÍ
-
-        int oneGuestReservation = 0;
-        int twoGuestsReservation = 0;
-        int moreGuestsReservation = 0;
-
-        for (Booking booking : bookingList) {
-           int numberOfGuest = booking.getNumberOfGuests();
-            if (numberOfGuest == 1) {
-                oneGuestReservation++;
-            }
-        }
-
-        System.out.println("Počet rezervací s jedním hostem: " + oneGuestReservation);
-
-
-
-        for (Booking booking : bookingList) {
-            int numberOfGuests = booking.getNumberOfGuests();
-            if (numberOfGuests == 2) {
-                twoGuestsReservation++;
-            }
-        }
-
-        System.out.println("Počet rezervací s dvěma hosty: " + twoGuestsReservation);
-
-
-        for (Booking booking : bookingList) {
-            int threeGuestReservation = booking.getGuestsNumber();
-            if (threeGuestReservation == 3) {
-                moreGuestsReservation++;
-            }
-        }
-
-
-        System.out.println("Počet rezervací s více hosty: " + moreGuestsReservation);
-
-        int bookingLength = booking1.getBookingLength();
-        System.out.println("Délka rezervace: " + bookingLength + " dnů");
-
     }
 
+    private static void bookingsInfo(BookingManager bookingManager) {
+        System.out.println("All bookings: " + bookingManager.getBookings().size());
+        System.out.println("Počet pracovních rezervací: " + bookingManager.getNumberOfWorkingBookings());
+        System.out.println("Průměrný počet hostů na rezervaci: " + bookingManager.getAverageGuests());
+        System.out.println("==== VYPSANI VSECH REZERVACI ====");
+    }
 
+    private static void makeBookings(List<Booking> bookingList, Room room2, Guest guest5) {
+        for (int fromDate = 1; fromDate <= 20; fromDate+= 2) {
+            LocalDate fromDateReservation = LocalDate.of(2024,8,fromDate);
+            LocalDate toDateReservation = fromDateReservation.plusDays(1);
 
+            bookingList.add(new Booking(4,fromDateReservation,
+                    toDateReservation, true, room2, guest5, 1, 1000));
 
+        }
+    }
 
 
 }

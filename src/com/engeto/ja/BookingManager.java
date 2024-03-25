@@ -12,9 +12,8 @@ public class BookingManager {
             booking.add(newBooking);
         }
 
-        public List<Booking> getBooking(int index) {
-            return (List<Booking>) booking.get(index);
-        }
+    //    public List<Booking> getBooking(int index) {
+    //        return
 
         public void clearBookings() {
             booking.clear();
@@ -35,7 +34,6 @@ public class BookingManager {
                 if (!booking.isVacation()) {
                     numberOfWorkingBookings++;
                 }
-
             }
             return numberOfWorkingBookings;
          }
@@ -52,13 +50,14 @@ public class BookingManager {
              totalGuests += booking.getNumberOfGuests();
              }
             return (double) totalBookings / totalGuests;
-
-
               }
 
+          public String getAverageGuests() {
+              return null;
+          }
 
-             public String getAverageGuests() {
-             return null;
-                 }
 }
+
+
+
 
